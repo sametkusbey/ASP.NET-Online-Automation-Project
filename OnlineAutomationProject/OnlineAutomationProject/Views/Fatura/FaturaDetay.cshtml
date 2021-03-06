@@ -1,0 +1,43 @@
+﻿@using OnlineAutomationProject.Models.Siniflar @*listeleme yapıyosan using kullan sonra alta modelini list metodu içinde tanımla*@
+@model List<FaturaKalem>
+@{
+    ViewBag.Title = "FaturaDetay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Fatura Detay Sayfası</h2>
+
+
+<br />
+
+
+<div style="background-color:darkgray">
+
+</div>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>Fatura Kalem ID</th>
+        <th>AÇIKLAMA</th>
+        <th>MİKTAR</th>
+        <th>BİRİM FİYAT</th>
+        <th>TUTAR</th>
+      
+    </tr>
+    @foreach (var ftrdetay in Model)
+    {
+        <tr>
+            <td>@ftrdetay.FaturaKalemID </td>  
+            <td>@ftrdetay.Aciklama </td>
+            <td>@ftrdetay.Miktar </td>
+            <td>@ftrdetay.BirimFiyat </td>
+            <td>@ftrdetay.Tutar </td>
+            
+          
+            
+        </tr>
+    }
+    </table>
+
+
+

@@ -1,0 +1,46 @@
+﻿@using OnlineAutomationProject.Models.Siniflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Faturalar</h2>
+<br />
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>SERİ NO</th>
+        <th>SIRA NO</th>
+        <th>TARİH</th>
+        <th>VERGİ DAİRESİ</th>
+        <th>SAAT</th>
+        <th>TOPLAM</th>
+        <th>TESLİM ALAN</th>
+        <th>TESLİM EDEN</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+
+    @foreach (var f in Model)
+    {
+        <tr>
+            <td>@f.FaturaID</td>
+            <td>@f.FaturaSeriNo</td>
+            <td>@f.FaturaSiraNo</td>
+            <td>@f.Tarih</td>
+            <td>@f.VergiDairesi</td>
+            <td>@f.Saat</td>
+            <td>@f.Toplam</td>
+            <td>@f.TeslimAlan</td>
+            <td>@f.TeslimEden</td>
+            <td><a href="/Fatura/FaturaGetir/@f.FaturaID" class="btn btn-primary">GÜNCELLE</a></td>
+            <td><a href="/Fatura/FaturaDetay/@f.FaturaID" class="btn btn-warning">DETAYLAR</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Fatura/FaturaEkle" class="btn btn-danger">YENİ FATURA EKLE</a>

@@ -1,0 +1,43 @@
+﻿@using OnlineAutomationProject.Models.Siniflar
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>CARİLER</h2>
+
+<br />
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>CARİ ID</th>
+        <th>CARİ ADI</th>
+        <th>CARİ SOYADI</th>
+        <th>CARİ ŞEHİR</th>
+        <th>CARİ MAİL</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+
+    </tr>
+
+    @foreach (var x in Model)
+    {
+
+        <tr>
+            <td>@x.CariID</td>
+            <td>@x.CariAd</td>
+            <td>@x.CariSoyad</td>
+            <td>@x.CariSehir</td>
+            <td>@x.CariMail</td>
+            <td><a href="/Cari/CariSil/@x.CariID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Cari/CariGetir/@x.CariID" class="btn btn-warning">GÜNCELLE</a></td>
+            <td><a href="#" class="btn btn-primary">SATIŞ GEÇMİŞİ</a></td>
+
+        </tr>
+    }
+</table>
+
+<a href="/Cari/CariEkle" class="btn btn-primary">CARİ EKLE</a>

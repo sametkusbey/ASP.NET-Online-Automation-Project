@@ -1,0 +1,43 @@
+﻿@using OnlineAutomationProject.Models.Siniflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Peronsoneller</h2>
+
+<table class="table table-bordered" style="margin-top:20px;">
+
+    <tr>
+        <th>ID</th>
+        <th>PERSONEL ADI</th>
+        <th>PERSONEL SOYADI</th>
+        <th>PERSONEL GÖRSEL</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    @foreach (var k in Model)  
+    {
+<tr>
+    <td>
+        @k.PersonelID 
+    </td>
+    <td>
+        @k.PersonelAd
+    </td>
+
+    <td>
+        @k.PersonelSoyad
+    </td>
+    <td>
+       <img src="@k.PersonelGorsel" style="width:128px; height:128px;"/>  
+    </td>
+
+    <td><a href="/Kategori/KategoriSil/@k.PersonelID" class="btn btn-danger">SİL</a></td>
+    <td><a href="/Personel/PersonelGetir/@k.PersonelID" class="btn btn-success">GÜNCELLE</a></td>
+</tr>
+    }
+</table>
+<a href="/Personel/PersonelEkle" class="btn btn-primary">PERSONEL EKLE</a>
