@@ -1,7 +1,7 @@
 # ASP.NET-Online-Automation-Project
-ASP.NET teknolojisi ile geliştirilmiş web tabanlı online otomasyon projesi.
 
-Project Screenshot
+
+Project Screenshot:
 
 ![proje-1](https://user-images.githubusercontent.com/59063456/111630809-ca956580-8803-11eb-9e6a-ede58a9a4126.png)
 
